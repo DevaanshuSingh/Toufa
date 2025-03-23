@@ -14,19 +14,19 @@
 </head>
 
 <body>
-
   <main>
     <div class="image">
       <div>
-        <div class="main-container ">
+        <div class="main-container">
           <section class="section-1">
             <nav>
               <div class="name">
-                <span><i>Swadeep Singha Roy</i></span>
+                <!-- <span><i>Swadeep Singha Roy</i></span> -->
+                <span><i>Vishal Singh</i></span>
                 <div class="side-bar"><span>I</span></div>
               </div>
               <div class="list">
-                <span data-content="1">Home</span>
+                <span data-content="1" onclick="location.reload();">Home</span>
                 <span data-content="2">About</span>
                 <span data-content="3">Contact</span>
                 <span data-content="4">Resume</span>
@@ -34,7 +34,7 @@
               </div>
             </nav>
             <div class="typing-container" id="typing">
-              <span>Namaste, I Am: </span>
+              <span>Namaste, I Am:</span>
               <div class="social-links">
                 <a href="https://github.com/SwadeepSinghaRoy"><i class="ri-github-fill"></i></a>
                 <a href=""><i class="ri-twitter-x-line"></i></a>
@@ -42,6 +42,9 @@
                 <a href=""><i class="ri-instagram-line"></i></a>
               </div>
             </div>
+
+            <div class="another-contents"></div>
+
           </section>
           <section class="section-2">
             <span class="">
@@ -49,11 +52,11 @@
               // echo str_repeat("111010101010110010110000111010101011000110000000 ", 501);
               ?>
             </span>
-            <footer id="footer" class="footer">
+            <!-- <footer id="footer" class="footer">
               <div class="container">
                 <h3 class="sitename"><u>SWADEEPSINGHAROY</u></h3>
                 <p>
-                  Namaste, Here A Person "SSR" Not ServerSideRendering! It's SwadeepSinghaRoy,
+                  Namaste, Here A Person "SSR" Not Server_Side_Rendering! It's SwadeepSinghaRoy,
                 </p>
                 <div class="social-links d-flex justify-content-center">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -71,14 +74,54 @@
                   </div>
                 </div>
               </div>
+            </footer> -->
+            <footer id="footer" class="footer">
+              <div class="container">
+                <h3 class="sitename"><u>STUDY_SPARKS</u></h3>
+                <p>
+                  Sparks Of Study Helps To Shine🎇🌟⭐, Join: <strong>STUDY SPARKS</strong>
+                  <br>
+                  STUDY_SPARKS Is Ready To Maky You <i>SHINY</i>!!
+                </p>
+                <!-- <div class="social-links d-flex justify-content-center">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-skype"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div> -->
+                <div class="container">
+                  <div class="copyright">
+                    <span>Copyright By</span> <strong class="px-1 sitename">VISHAL SINGH</strong>
+                    <!-- <span>CoderAndAccotax</span> -->
+                  </div>
+                  <div class="credits">
+                    Designed by <a href="https://github.com/DevaanshuSingh">,</a>
+                  </div>
+                </div>
+              </div>
             </footer>
           </section>
         </div>
   </main>
 
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
   <script>
-    const names = ["Maanus","Swadeep Singha Roy", "Human","Homosapien","Insaan"];
+    window.onload = function() {
+      let type = document.querySelector('.typing-container');
+      type.style.left = "10%";
+      type.style.height = "20%";
+      type.style.width = "content";
+      type.style.filter = "none";
+      type.style.backgroundColor = "rgba(0,0,0,0)";
+    }
+    // const names = [" Bhaartiya", " Maanus", " Swadeep Singha Roy", " Human", " Homosapien", " Insaan"];//SWADEEP
+    const names = [" Bhaartiya", " Teacher", " VISHAL SINGH", " Here", " For You", " Motivated"];//BHAIYA
     let nameIndex = 0;
+
     function typeEffect(text, callback) {
       let index = 0;
       const typingElement = document.querySelector("#typing span");
@@ -102,19 +145,39 @@
         }
       }
       erase();
-    }    function startLoop() {
+    }
+
+    function startLoop() {
       typeEffect(names[nameIndex], () => {
         nameIndex = (nameIndex + 1) % names.length;
         startLoop();
       });
-    }startLoop();
-
-    window.onload=function(){
-      animation();
     }
+    startLoop();
 
+
+    let getContentOf = 0;
+    $(document).ready(function() {
+      $('.section-1 nav .list span').on('click', function() {
+        getContentOf = $(this).attr('data-content');
+        console.log(getContentOf);
+
+        $.ajax({
+          type: 'POST',
+          url: `./CONTENTS/c${getContentOf}`,
+          success: function(response) {
+            $('.another-contents').fadeOut(1000, function() {
+              $(this).html(response).fadeIn(1000);
+            });
+            $('.section-2').fadeToggle(2000);
+          },
+          error: function(xhr, status, error) {
+            console.log("Error: " + error);
+          }
+        });
+      });
+    });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
