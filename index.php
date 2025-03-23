@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main>
+    <div class="image">
+      <div>
+        <div class="main-container ">
+          <section class="section-1">
+            <nav>
+              <div class="name">
+                <span><i>Swadeep Singha Roy</i></span>
+                <div class="side-bar"><span>I</span></div>
+              </div>
+              <div class="list">
+                <span data-content="1">Home</span>
+                <span data-content="2">About</span>
+                <span data-content="3">Contact</span>
+                <span data-content="4">Resume</span>
+                <span data-content="5">Interests</span>
+              </div>
+            </nav>
+            <div class="typing-container" id="typing">
+              <span>Namaste, I Am: </span>
+              <div class="social-links">
+                <a href="https://github.com/SwadeepSinghaRoy"><i class="ri-github-fill"></i></a>
+                <a href=""><i class="ri-twitter-x-line"></i></a>
+                <a href="https://www.facebook.com/swadeep.singharoy.5"><i class="ri-facebook-circle-fill"></i></a>
+                <a href=""><i class="ri-instagram-line"></i></a>
+              </div>
+            </div>
+          </section>
+          <section class="section-2">
+            <span class="">
+              <?php
+              // echo str_repeat("111010101010110010110000111010101011000110000000 ", 501);
+              ?>
+            </span>
+            <footer id="footer" class="footer">
+              <div class="container">
+                <h3 class="sitename"><u>SWADEEPSINGHAROY</u></h3>
+                <p>
+                  Namaste, Here A Person "SSR" Not ServerSideRendering! It's SwadeepSinghaRoy,
+                </p>
+                <div class="social-links d-flex justify-content-center">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-skype"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+                <div class="container">
+                  <div class="copyright">
+                    <span>Copyright By</span> <strong class="px-1 sitename">CNAT</strong> <span>CoderAndAccotax</span>
+                  </div>
+                  <div class="credits">
+                    Designed by <a href="https://debugginghuman.com/">,</a>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </section>
+        </div>
+  </main>
+
+  <script>
+    const names = ["Maanus","Swadeep Singha Roy", "Human","Homosapien","Insaan"];
+    let nameIndex = 0;
+    function typeEffect(text, callback) {
+      let index = 0;
+      const typingElement = document.querySelector("#typing span");
+
+      function erase() {
+        if (typingElement.textContent.length > 14) {
+          typingElement.textContent = typingElement.textContent.slice(0, -1);
+          setTimeout(erase, 50);
+        } else {
+          type();
+        }
+      }
+
+      function type() {
+        if (index < text.length) {
+          typingElement.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, 100);
+        } else {
+          setTimeout(callback, 3000);
+        }
+      }
+      erase();
+    }    function startLoop() {
+      typeEffect(names[nameIndex], () => {
+        nameIndex = (nameIndex + 1) % names.length;
+        startLoop();
+      });
+    }startLoop();
+
+    window.onload=function(){
+      animation();
+    }
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
