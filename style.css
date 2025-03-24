@@ -37,6 +37,8 @@
     /* background: url('img2.jpg') no-repeat center 20%; */
     /* background: url('img3.jpg') no-repeat center 20%; */
     background: url('img4.jpg') no-repeat center 20%;
+    /* background: url('img5.jpg') no-repeat center 20%; */
+    /* background: url('img6.jpg') no-repeat center 20%; */
     background-size:cover;
     /* background-size: contain; */
     backdrop-filter: blur(5px);
@@ -262,5 +264,38 @@
 
 .list-group{
     background-color: transparent !important;
+
+}
+
+
+
+
+/*Intrests*/
+.intrest-container {
+    /* background: white; */
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 700px;
+    text-align: center;
+}
+h1 {
+    /* color: #2c3e50; */
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px rgba(54, 207, 62, 0.671);
+
+}
+p {
+    background-color: rgba(0, 0, 0, 0.185);
+    /* color: #555; */
+    font-size: 1.2em;
+    /* line-height: 1.6; */
+    /* text-shadow: 1px 0px 5px rgba(60, 255, 0, 0.671); */
+
+}
+.highlight {
+    color: #1dade6;
+    font-weight: bold;
+    text-shadow: 1px 0px 5px rgba(60, 255, 0, 0.671);
 
 }
