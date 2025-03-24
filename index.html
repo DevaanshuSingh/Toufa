@@ -136,7 +136,9 @@
             type.style.backgroundColor = "rgba(0,0,0,0)";
 
             if (window.innerWidth <= 768)
-            type.style.left = "2%";
+                type.style.left = "2%";
+            else
+                type.style.left = "10%";
 
         }
         // const names = [" Bhaartiya", " Maanus", " Swadeep Singha Roy", " Human", " Homosapien", " Insaan"];//SWADEEP
@@ -264,8 +266,8 @@
         let navIsOpen = false;
         $('.name > span > .open-navbar > i[class^="ri-"]').on("click", function () {
             if (!navIsOpen) {
-                $('.open-navbar').css("transform","rotate(180deg)");
-                
+                $('.open-navbar').css("transform", "rotate(180deg)");
+
                 $("nav").css({ "background-color": "rgba(0,255,0,0.1)", "transition": "background-color 1s ease-in-out" }); // New: Background color transition added
                 $("nav").css({ "height": "fit-content", "transition": "height 1s ease-in-out" }); // New: Background color transition added
 
