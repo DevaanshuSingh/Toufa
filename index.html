@@ -130,11 +130,14 @@
     <script>
         window.onload = function () {
             let type = document.querySelector('.typing-container');
-            type.style.left = "10%";
             type.style.height = "20%";
             type.style.width = "content";
             type.style.filter = "none";
             type.style.backgroundColor = "rgba(0,0,0,0)";
+
+            if (window.innerWidth <= 768)
+            type.style.left = "5%";
+
         }
         // const names = [" Bhaartiya", " Maanus", " Swadeep Singha Roy", " Human", " Homosapien", " Insaan"];//SWADEEP
         const names = [" Bhaartiya", " Teacher", " VISHAL SINGH", " Here", " For You", " Motivated"];//BHAIYA
