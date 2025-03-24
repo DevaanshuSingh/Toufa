@@ -162,7 +162,7 @@
 
         $.ajax({
           type: 'POST',
-          url: `./CONTENTS/c${getContentOf}`,
+          url: `./c${getContentOf}`,
           success: function(response) {
             $('.another-contents').fadeOut(1000, function() {
               $(this).html(response).fadeIn(1000);
