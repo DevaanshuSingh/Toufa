@@ -58,8 +58,8 @@ main {
     background: url('img4.jpg') no-repeat center 20%;
     /* background: url('img5.jpg') no-repeat center 20%; */
     /* background: url('img6.jpg') no-repeat center 20%; */
-    background-size: cover;
     /* background-size: contain; */
+    background-size: cover;
     backdrop-filter: blur(5px);
     background-color: black;
 }
@@ -103,8 +103,9 @@ main {
     visibility: hidden;
     font-size: x-large;
     transition: transform 0.3s ease-in-out;
-    /* animation: changeTextColor 5s infinite alternate; */
     color: GOLD;
+    cursor: pointer !important;
+    z-index: 100;
 }
 
 .open-navbar {
@@ -204,49 +205,13 @@ main {
     overflow: scroll;
 }
 
-/*OLD*/
-/* .typing-container {
-    transition: all 5s ease;
-    filter: blur(5px);
-    width: max-content !important;
-    position: absolute;
-    left: -20%;
-    top: 10%;
-    height: 20% !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 1.5rem !important;
-    background-color: rgba(0, 128, 0, 0.452);
-    clip-path: polygon(0% 0%, 100% 0, 100% 50%, 75% 100%, 0% 100%);
-    overflow: scroll;
-} */
-/*OLD*/
-
-/*NEW*/
 .typing-container {
     position: relative;
     left: -20%;
     top: 10%;
-    /* transform: translateX(-50%); */
     transition: all 2s ease-in-out;
     z-index: 1000;
 }
-/* .typing-container {
-    position: relative;
-    top: 0;
-    left: 0;
-    transition: none;
-} */
-/*NEW*/
-
-
-
-
-
-
-
 
 @keyframes blink {
     50% {
@@ -273,7 +238,7 @@ main {
     background-color: rgb(9, 255, 0);
     margin-left: 2px;
     animation: blink 2s infinite;
-    border-radius: 50%;
+    border-radius: 10%;
 }
 
 .typing-container>.social-links {
@@ -456,7 +421,6 @@ main {
 h1 {
     font-size: 2.5em;
     text-shadow: 2px 2px 5px rgba(54, 207, 62, 0.671);
-
 }
 
 p {
