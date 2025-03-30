@@ -44,6 +44,7 @@ body {
 main {
     height: auto;
     width: auto;
+    background-color: black;
 }
 
 .image {
@@ -59,6 +60,7 @@ main {
     /* background: url('img5.jpg') no-repeat center 20%; */
     /* background: url('img6.jpg') no-repeat center 20%; */
     /* background-size: contain; */
+    opacity: 0.3;
     background-size: cover;
     backdrop-filter: blur(5px);
     background-color: black;
@@ -145,7 +147,6 @@ main {
     background-color: green;
     color: green;
     opacity: 0;
-    animation: blink 2s infinite alternate;
     opacity: 0;
 }
 
@@ -205,17 +206,28 @@ main {
     overflow: scroll;
 }
 
-.typing-container {
+/* .typing-container {
     position: relative;
     left: -20%;
     top: 10%;
     transition: all 2s ease-in-out;
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
+} */
+.typing-container {
+    transition: all 5s ease;
+    filter: blur(5px);
+    width: max-content !important;
+    position: relative;
+    left: -20%;
+    top: 10%;
+    height: 20% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.5rem !important;
+    background-color: rgba(0, 128, 0, 0.452);
+    clip-path: polygon(0% 0%, 100% 0, 100% 50%, 75% 100%, 0% 100%);
+    overflow: scroll;
 }
 
 .typing-container>span {
@@ -233,10 +245,12 @@ main {
     content: '';
     display: inline-block;
     width: .5vmin;
-    height: 2vmin !important;
-    background-color: rgb(9, 255, 0);
+    height: 5vmin !important;
+    /* background-color: rgb(9, 255, 0); */
+    background: rgb(11, 178, 89);
+    background: linear-gradient(135deg, rgba(11, 178, 89, 1) 25%, rgba(9, 115, 173, 1) 91%, rgba(8, 75, 227, 0.46262254901960786) 133%);
     margin-left: 2px;
-    animation: blink 2s infinite;
+    animation: blink 1s infinite;
     border-radius: 10%;
 }
 
@@ -297,10 +311,6 @@ main {
     position: relative;
     width: 100vw;
     background-color: black;
-}
-
-.footer>.container {
-    /* border: 1px solid blue; */
 }
 
 .footer>.container>.container {
@@ -385,9 +395,11 @@ main {
     /* text-shadow: 2px 2px 5px rgba(117, 221, 32, 0.363),
                  2px 2px 5px rgba(117, 221, 32, 0.418);
     color: green !important; */
-    text-shadow: 1px 1px 2px rgba(64, 241, 10, 0.856); /* सरल छाया प्रभाव */
-    color: white; /* पाठ का रंग सफेद करें */
-  }
+    text-shadow: 1px 1px 2px rgba(64, 241, 10, 0.856);
+    /* सरल छाया प्रभाव */
+    color: white;
+    /* पाठ का रंग सफेद करें */
+}
 
 .inner-content {
     position: relative;
